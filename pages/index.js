@@ -1,7 +1,7 @@
 "use-client";
 import Head from "next/head";
 import { Inter } from "next/font/google";
-import { useState, useRef } from "react";
+import { useState } from "react";
 
 import { getTempData, getAccData } from "@/helpers/data";
 import { useEffect } from "react";
@@ -10,7 +10,6 @@ import { labStatus } from "@/constants/labStatus";
 
 import Snackbar from "@/components/snackbar";
 
-import { useRouter } from "next/router";
 import ChartsData from "@/components/lab/chartsData";
 import ControlPanel from "@/components/lab/controlPanel";
 
@@ -23,10 +22,6 @@ let dataRecordStatusVar = "start";
 let holdDataCheckedVar = false;
 
 export default function Home() {
-  const router = useRouter();
-
-  const [timeLeft, setTimeLeft] = useState(0);
-
   const [socket, setSocket] = useState();
   const [socketConnected, setSocketConnected] = useState(false);
   const [message, setMessage] = useState("");
