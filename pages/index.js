@@ -118,6 +118,7 @@ export default function Home() {
     return newSocket;
   }
 
+  // handle experiment status
   useEffect(() => {
     if (experimentStatus === "warning") {
       setMessage(
